@@ -101,17 +101,49 @@ button:disabled {
     box-shadow: none;
 }
 
-.instructions {
+.game-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.tab-btn {
+    background: #e9ecef;
+    color: #495057;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background: #dee2e6;
+}
+
+.tab-btn.active {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+}
+
+.tab-content {
     background: #f8f9fa;
     padding: 20px;
     border-radius: 10px;
     border-left: 4px solid #667eea;
     text-align: left;
+    display: none;
 }
 
-.instructions h3 {
+.tab-content.active {
+    display: block;
+}
+
+.tab-content h3 {
     color: #667eea;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 1.1em;
 }
 
@@ -119,6 +151,98 @@ button:disabled {
     color: #666;
     margin: 5px 0;
     font-size: 0.9em;
+}
+
+#achievements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.achievement-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-left: 3px solid #667eea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.achievement-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-info h4 {
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.achievement-info p {
+    color: #666;
+    font-size: 12px;
+    margin: 0;
+}
+
+.achievement-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-bar {
+    width: 80px;
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4ecdc4, #44a08d);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.progress-text {
+    color: #666;
+    font-size: 12px;
+    min-width: 40px;
+    text-align: right;
+}
+
+.achievement-status {
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.achievement-status.locked {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.achievement-status.unlocked {
+    background: #e8f5e9;
+    color: #2e7d32;
+    animation: pulse 0.5s;
+}
+
+.achievement-badge {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 .food {
