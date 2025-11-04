@@ -20,12 +20,24 @@
             <button id="pause-btn" disabled>暂停</button>
             <button id="reset-btn">重新开始</button>
         </div>
-        <div class="instructions">
+        <div class="game-tabs">
+            <button class="tab-btn active" data-tab="instructions">游戏说明</button>
+            <button class="tab-btn" data-tab="achievements">成就系统</button>
+        </div>
+        
+        <div class="tab-content active" id="instructions">
             <h3>游戏说明</h3>
             <p>使用方向键控制蛇的移动方向</p>
             <p>吃到食物得分，每次得分增加10分</p>
             <p>等级每增加1级，速度提升10%</p>
             <p>撞到墙壁或自己的身体游戏结束</p>
+        </div>
+        
+        <div class="tab-content" id="achievements">
+            <h3>成就系统</h3>
+            <div id="achievements-list">
+                <!-- 成就列表将通过JavaScript动态生成 -->
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
